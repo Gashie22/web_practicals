@@ -1,0 +1,52 @@
+<script>
+//ternary operatory - alt  way of writing IF statements
+function tenary(a){
+return a>0 ? 'a is positive' : a<0 ? 'a is negative' : 'a is zero'
+}
+const PTV= tenary(0);
+console.log(PTV)
+
+function tenary2(x,y){
+    return x>y ? `${x} is bigger than ${y}` : x<y ? `${y} is bigger than ${x}`: `${x} and ${y} are equal`;
+}
+const NUM= tenary2(3,8);
+console.log(NUM);
+console.log(tenary2(5,5));
+//ParseInt function
+function convert(str){
+    result = parseInt(str)
+    return result
+}
+console.log(convert('86'));
+function convert2(bin){
+    result2=parseInt(bin,2)
+    return result2
+}
+console.log(convert2('1001'));
+
+//anonymous or arrow functioons
+var magic = (function (){
+    return new Date()
+})()
+var magic2 =(()=> new Date())()
+console.log(magic)
+console.log(magic2)
+
+function combine (arr1,arr2){
+    fuse=arr1.concat(arr2);
+    return fuse;
+}
+console.log(JSON.stringify(combine([1,2],[3,4,5])))
+
+//using arrow
+var myC = (arr3,arr4)=>arr3.concat(arr4);
+console.log(myC([6,7],[8,9,10]))
+
+//function that filter all negative numbers in a array
+myarray=[-2,0,3,5,6,7,8,9,-1];
+const thisfilter = (arr)=>{
+    const squareint=arr.filter(num=>Number.isInteger && num>0).map(x=>x*x);
+    return squareint ;
+}
+console.log(thisfilter(myarray))
+</script>

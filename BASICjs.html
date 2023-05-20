@@ -1,0 +1,53 @@
+
+<script>
+    var a=7;
+    var b=9;
+    var c = a+b
+    console.log(c)
+
+    var name='Gashie'
+    var age;
+    age=21;
+    output=''
+    console.log(output+='hie my name is \n' + name)
+//arrays
+    myarray=['Gashie','Courage','Tino']
+    console.log(myarray)
+    console.log(myarray[0])
+    console.log(myarray[2])
+    console.log(myarray.push('Alexa'))
+    console.log(myarray.pop())
+    console.log(myarray.pop())
+    myarray.push("John")
+    myarray.push('Savage')
+    myarray.unshift(['breezy','Jeezy','Oswald'])
+    console.log(myarray)
+    console.log(myarray[0][2])
+    myarray.shift()
+    myarray.unshift("Gashie Snr")
+    console.log(myarray)
+    
+    //word game
+    function wordgame(noun,adjective,verb,adverb){
+        result=""
+        result+='Yesterday a' + ' ' + adjective+' '  +noun+ ' '+ verb+' ' +adverb
+        console.log(result)
+        var age=22 ;
+        console.log(age)
+    }
+    wordgame('dog','big','ran','quickly')
+    wordgame('cat','small','moved','slowly')
+    console.log(age)
+
+    //function basics 
+    var myglobal=10
+    state=''
+    function f1(){
+        if(typeof myglobal !="undefined"){
+            state+='value is : '+myglobal
+            console.log(state)
+        }
+    }
+    f1()
+
+</script>

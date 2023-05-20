@@ -1,0 +1,64 @@
+<script>
+    function comparison(a,b){
+        if(a<b){
+            console.log(a + ' '+'less than '+ b);
+            return false
+        }
+        else if(a>b){
+            console.log(a +' '+ 'greater than ' + b)
+            return true;
+        }
+        else{
+            console.log('numbers equal')
+        }
+    }
+    comparison(9,6);
+    comparison(10,10)
+    comparison(2,8)
+
+    //FIFO  data structure
+    function que(arr,item){
+        arr.push(item);
+        result=arr.shift();
+        return result
+    }
+
+    myarray=[2,5,7,9,12];
+    console.log ('original array : ' + JSON.stringify(myarray));
+    console.log('result : '+ que(myarray,6));
+    console.log ('new array : ' + JSON.stringify(myarray));
+
+    //comparisons operators
+    function check(val){
+        if (val===12){
+            return 'equal'
+        }
+        else {
+            return 'not equal'
+        }
+    }
+    val='12'
+    console.log(check(val))
+
+    function grades (mark){
+        console.log("this prog returns an equivalent grade given a mark \n")
+        switch (mark){
+            default : return "enter valid mark"
+            break ;
+            case 50: return "grade C"
+            break ;
+            case 60 : return 'grade B'
+            break;
+            case 70 :
+            case 80:
+            case 90:
+            case 100 : return "grade A"
+            break ;
+        }
+        
+
+    }
+    mark = 70 ;
+    console.log(grades(mark));
+
+</script>

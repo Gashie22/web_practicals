@@ -1,0 +1,98 @@
+<script>
+    //locking an object
+    function freeze (){
+        const freezepi= {
+            PI : 3.14
+        };
+        Object.freeze(freezepi)
+        try {
+            freezepi = 99 ;
+        } catch (ex) {
+            console.log(ex);
+        }
+        return freezepi.PI
+    }
+    const PI = freeze()
+    console.log(PI);
+
+    //destructuring
+    voxel = {x:3.0, y:2.2,z:5.0};
+    const {x:a,y:b,z:c}=voxel;
+    console.log(a);
+    temp={
+        todaytenp:28,
+        tmoltemp:22
+    }
+    function get_temp (degree){
+        const{tmoltemp:display_temp}=temp;
+        return display_temp
+    }
+    const new_temp=get_temp(temp);
+    console.log(new_temp);
+
+    const local= {
+        today : {min:55, max:60},
+        tmol : {min :40, max:52}
+    }
+    var mytemp=(temp1)=>{
+        const {tmol:{max:maxT}}=local;
+        return maxT;
+    }
+    const maxoftoday=mytemp(local);
+    console.log(`the max temp is : ${maxoftoday}`);
+    //destructuring + arrays
+    [d,f, ,r]=[1,2,3,4,5,6,7,8,9]
+    console.log(f,d,r)
+    x=10 ;
+    w=5;
+    var swaps=()=>[x,w]=[w,x];
+        console.log(swaps(5,10))
+
+    //REST operation (...)
+    const sum = (function (){
+        return function sum(r1,r2,r3){
+            const args = [r1,r2,r3]
+            return args.reduce((r1,r2)=>r1+r2,0)
+        }
+    })();
+    console.log(sum(1,2,3))
+    //=>
+    const sum2 = (function (){
+        return function sum2(...args2){
+        return args2.reduce((r3,r4)=>r3+r4)
+        }
+    })()
+    console.log(sum2(1,2,3,4,5))
+    //more exmaples
+    thisarray=['jan','feb','march']
+    let currentarray
+    const months= (function(){
+        currentarray=[...thisarray]
+        thisarray[0]='Dec'
+    })()
+    console.log(thisarray)
+    console.log(currentarray)
+    //using REST + DECO to reassign array values
+    nums=[1,2,3,4,5,6,7]
+    function remove(list){
+        const [ , ,...nums]=list
+    }
+    console.log(nums)
+    console.log(remove(nums))
+    //passing an object as a parameter
+    const stats={
+        mean : 45,
+        median:33,
+        sd : 3.5,
+        mode : 22
+    }
+    const half = (function(){
+        return function half(stats){
+        return stats.mean
+        }
+    })()
+    console.log(stats)
+    console.log(half(stats))
+
+
+</script>

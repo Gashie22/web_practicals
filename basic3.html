@@ -1,0 +1,55 @@
+<script>
+    function compare(a,b){
+        if(a<0 || b<0){
+            return null
+        }
+        else {
+            return Math.round(Math.pow(Math.sqrt(a)+Math.sqrt(b),2))
+        }
+    }
+    console.log(compare(2,2))
+
+    //objects
+
+    var myDog={
+        'legs' : 2,
+        'tails': 1,
+        'teeth or tooth':'many',
+        'ears':'two'
+    }
+    console.log(myDog.legs)
+    console.log(myDog['teeth or tooth'])//used when var has a space
+    myDog.legs=4;
+    myDog.tails= 2;
+    myDog.friends='humans';
+    console.log(JSON.stringify (myDog))
+    delete myDog['teeth or tooth'];
+    console.log(myDog);
+
+    function hasOwn(val){
+
+        if (myDog.hasOwnProperty(val)){
+            return myDog[val]
+        }
+        else return 'not found'
+    }
+    val=''
+    console.log(hasOwn('legs'))
+
+    //nested objects
+    var recordlabel = [{
+        'artist' : 'Jay Z',
+        'genre' : 'Hip Hop',
+        'album' : [
+        'picasso','blueprint','cartah'],
+        'year': 2020,
+        'sublabel':{
+            'name': 'Capitol Rec',
+            'founder':'Jay',
+            'newArtist':'RiRi'
+        }
+    }]
+    //console.log(recordlabel.album[1])
+    console.log(recordlabel)
+    console.log(recordlabel[0].album[2])
+</script>
